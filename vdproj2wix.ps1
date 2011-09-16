@@ -36,7 +36,7 @@ if ( ($args.count -ne 1) -or ($args[0] -eq '--help') )
 	}
 
 	write-output ""
-	write-output "Usage: vdproj2wix <vdproj file>"
+	write-output "USAGE: vdproj2wix <vdproj file>"
 	write-output ""
 	write-output "e.g. PowerShell -File vdproj2wix.ps1 Test.vdproj"
 	exit 1
@@ -54,8 +54,8 @@ if ($wixFolder -ne '')
 	$wixFile = join-path $wixFolder $wixFile
 }
 
-write-output "Input:  $vdprojFile"
-write-output "Ouptut: $wixFile"
+write-output "Input : $vdprojFile"
+write-output "Output: $wixFile"
 
 # Initialise content variables
 $productId = '<unknown>'
@@ -67,7 +67,7 @@ $upgradeCode = '<unknown>'
 $packageCode = '<unknown>'
 $files = @()
 
-# Initialise section variables
+# Initialise parsing variables
 $inProductSection = $false
 $inFileSection = $false
 
@@ -80,7 +80,7 @@ foreach ($line in $lines)
 {
 	if ($line -match '^\s*"(?<section>\w+)"$')
 	{
-		# Handle begin/end of each section
+		# Handle entry/exit of the sections we're interested in
 		if ($matches.section -eq 'Product')
 		{
 			$inProductSection = $true
