@@ -14,12 +14,56 @@ td		{ font-family: Verdana, Arial; font-size: 10pt; border: 1px solid black; ver
 
 <body>
 
-<h3 align="center">vdproj2wix v0.1</h3>
+<h3 align="center">vdproj2wix v0.1 [Alpha]</h3>
 
 <a name="Introduction"></a>
 <h4>Introduction</h4>
 
 <p>
+This PowerShell file (vdproj2wix.ps1) is a very simple script for converting
+a Visual Studio setup project (aka a .vdproj file) into a WiX format one (i.e.
+a .wix file). Although there are other more fully featured tools for creating a
+.wix file, such as from an existing MSI, I wanted something that gave me a bare
+bones .wix file that ignored all the boilerplate code that Visual Studio adds by
+default. As a server-side chappy all the MSI installers I create are simple ones
+designed to deploy a bunch of files into a folder - this script targets that
+scenario.
+</p>
+
+<a name="Execution"></a>
+<h4>Converting a Setup Project</h4>
+
+<p>
+The script requires just a single argument to run - the path to the .vdproj file
+that you want to convert. It will create a new file in the same folder with a
+simialr name but a .wix extension, e.g.
+</p>
+<pre>
+C:\> PowerShell -File vdproj2wix.ps1 Path\To\MyProject.vdproj
+Input : Path\To\MyProject.vdproj
+Output: Path\To\MyProject.wix
+</pre>
+
+<a name="Limitations"></a>
+<h4>Limitations</h4>
+
+<p>
+As should be clear from the paragraph above this script is not intended to provide
+a hi-fidelity conversion, on the contrary it produces a basic .wix file with
+entries for the following:-
+</p>
+<ul>
+<li>The Product section (name, GUIDs, version, manufacturer)</li>
+<li>The default 'Program Files' folder (based on manufacturer\product)</li>
+<li>The files (all in one component)</li>
+</ul>
+<p>
+Hence, this means no UI stuff, or any other fancy features.
+</p>
+<p>
+<i><b>NB: Although this alpha version doesn't support multiple folders and might
+generate a badly formed file in some cases my intention is to fix these issues
+so that it handles the simple "file deployment" style .vdproj files properly.</b></i>
 </p>
 
 <hr>
@@ -41,7 +85,7 @@ Email: <a href="mailto://gort@cix.co.uk">gort@cix.co.uk</a><br>
 Web: <a href="http://www.cix.co.uk/~gort">www.cix.co.uk/~gort</a><br>
 </p><p>
 Chris Oldwood<br>
-22nd June 2011<br>
+24th June 2011<br>
 </p>
 
 </body>
