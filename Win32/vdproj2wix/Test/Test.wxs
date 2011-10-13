@@ -18,7 +18,7 @@
 
                         <Component Id="MyComponent" Guid="BA10EC38-B7C9-42CF-BA95-090B531BC1C2">
 
-                            <File Id="vdproj2wix.ps1" Name="vdproj2wix.ps1" DiskId="1" Source="..\vdproj2wix.ps1"/>
+                            <File Id="FileInMainFolder.txt" Name="FileInMainFolder.txt" DiskId="1" Source="FileInMainFolder.txt"/>
 
                         </Component>
 
