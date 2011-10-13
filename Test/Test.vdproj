@@ -79,8 +79,8 @@
         {
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_A6BFA90FE8CC4AB2B623361E17A5B2F2"
             {
-            "SourcePath" = "8:..\\vdproj2wix.ps1"
-            "TargetName" = "8:vdproj2wix.ps1"
+            "SourcePath" = "8:FileInMainFolder.txt"
+            "TargetName" = "8:FileInMainFolder.txt"
             "Tag" = "8:"
             "Folder" = "8:_96A3D1EB1439486F8CE58D247ED44441"
             "Condition" = "8:"
