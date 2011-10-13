@@ -1,24 +1,24 @@
-<?xml version='1.0'?>
-<Wix xmlns='http://schemas.microsoft.com/wix/2006/wi'>
-    <Product Id='14B93E5D-FC30-40FD-8AEA-7E40DB5A9977'
-             Name='vdproj2wix Test'
-             Language='1033'
-             Version='1.0.0'
-             Manufacturer='Chris Oldwood'
-             UpgradeCode='5C47C5C3-B178-4E11-A9A2-A7E97FB02195'>
+<?xml version="1.0"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Product Id="14B93E5D-FC30-40FD-8AEA-7E40DB5A9977"
+             Name="vdproj2wix Test"
+             Language="1033"
+             Version="1.0.0"
+             Manufacturer="Chris Oldwood"
+             UpgradeCode="5C47C5C3-B178-4E11-A9A2-A7E97FB02195">
 
-        <Package Compressed='yes'/>
+        <Package Compressed="yes"/>
 
-        <Media Id='1' Cabinet='product.cab' EmbedCab='yes'/>
+        <Media Id="1" Cabinet="product.cab" EmbedCab="yes"/>
 
-        <Directory Id='TARGETDIR' Name='SourceDir'>
-            <Directory Id='ProgramFilesFolder' Name='PFiles'>
-                <Directory Id='ManufacturerDir' Name='Chris Oldwood'>
-                    <Directory Id='ProductDir' Name='vdproj2wix Test'>
+        <Directory Id="TARGETDIR" Name="SourceDir">
+            <Directory Id="ProgramFilesFolder" Name="PFiles">
+                <Directory Id="ManufacturerDir" Name="Chris Oldwood">
+                    <Directory Id="ProductDir" Name="vdproj2wix Test">
 
-                        <Component Id='MyComponent' Guid='BA10EC38-B7C9-42CF-BA95-090B531BC1C2'>
+                        <Component Id="MyComponent" Guid="BA10EC38-B7C9-42CF-BA95-090B531BC1C2">
 
-                            <File Id='vdproj2wix.ps1' Name='vdproj2wix.ps1' DiskId='1' Source='..\\vdproj2wix.ps1' />
+                            <File Id="vdproj2wix.ps1" Name="vdproj2wix.ps1" DiskId="1" Source="..\vdproj2wix.ps1"/>
 
                         </Component>
 
@@ -27,8 +27,8 @@
             </Directory>
         </Directory>
 
-        <Feature Id='MyFeature' Level='1'>
-            <ComponentRef Id='MyComponent'/>
+        <Feature Id="MyFeature" Level="1">
+            <ComponentRef Id="MyComponent"/>
         </Feature>
 
     </Product>
