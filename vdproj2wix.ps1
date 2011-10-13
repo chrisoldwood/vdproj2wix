@@ -137,47 +137,47 @@ $files = $files | sort -property { split-path -leaf $_ }
 #
 # Write the WiX file
 #
-"<?xml version=`"1.0`"?>"														| out-file $wixFile
-"<Wix xmlns=`"http://schemas.microsoft.com/wix/2006/wi`">"						| out-file $wixFile -append
-"    <Product Id=`"$productId`""												| out-file $wixFile -append
-"             Name=`"$productName`""											| out-file $wixFile -append
-"             Language=`"$languageId`""											| out-file $wixFile -append
-"             Version=`"$productVersion`""										| out-file $wixFile -append
-"             Manufacturer=`"$manufacturer`""									| out-file $wixFile -append
-"             UpgradeCode=`"$upgradeCode`">"									| out-file $wixFile -append
-""																				| out-file $wixFile -append
-"        <Package Compressed=`"yes`"/>"											| out-file $wixFile -append
-""																				| out-file $wixFile -append
-"        <Media Id=`"1`" Cabinet=`"product.cab`" EmbedCab=`"yes`"/>"			| out-file $wixFile -append
-""																				| out-file $wixFile -append
-"        <Directory Id=`"TARGETDIR`" Name=`"SourceDir`">"						| out-file $wixFile -append
-"            <Directory Id=`"ProgramFilesFolder`" Name=`"PFiles`">"				| out-file $wixFile -append
-"                <Directory Id=`"ManufacturerDir`" Name=`"$manufacturer`">"		| out-file $wixFile -append
-"                    <Directory Id=`"ProductDir`" Name=`"$productName`">"		| out-file $wixFile -append
-""																				| out-file $wixFile -append
-"                        <Component Id=`"MyComponent`" Guid=`"$packageCode`">"	| out-file $wixFile -append
-""																				| out-file $wixFile -append
+"<?xml version=`"1.0`"?>"														| out-file -encoding ASCII $wixFile
+"<Wix xmlns=`"http://schemas.microsoft.com/wix/2006/wi`">"						| out-file -encoding ASCII $wixFile -append
+"    <Product Id=`"$productId`""												| out-file -encoding ASCII $wixFile -append
+"             Name=`"$productName`""											| out-file -encoding ASCII $wixFile -append
+"             Language=`"$languageId`""											| out-file -encoding ASCII $wixFile -append
+"             Version=`"$productVersion`""										| out-file -encoding ASCII $wixFile -append
+"             Manufacturer=`"$manufacturer`""									| out-file -encoding ASCII $wixFile -append
+"             UpgradeCode=`"$upgradeCode`">"									| out-file -encoding ASCII $wixFile -append
+""																				| out-file -encoding ASCII $wixFile -append
+"        <Package Compressed=`"yes`"/>"											| out-file -encoding ASCII $wixFile -append
+""																				| out-file -encoding ASCII $wixFile -append
+"        <Media Id=`"1`" Cabinet=`"product.cab`" EmbedCab=`"yes`"/>"			| out-file -encoding ASCII $wixFile -append
+""																				| out-file -encoding ASCII $wixFile -append
+"        <Directory Id=`"TARGETDIR`" Name=`"SourceDir`">"						| out-file -encoding ASCII $wixFile -append
+"            <Directory Id=`"ProgramFilesFolder`" Name=`"PFiles`">"				| out-file -encoding ASCII $wixFile -append
+"                <Directory Id=`"ManufacturerDir`" Name=`"$manufacturer`">"		| out-file -encoding ASCII $wixFile -append
+"                    <Directory Id=`"ProductDir`" Name=`"$productName`">"		| out-file -encoding ASCII $wixFile -append
+""																				| out-file -encoding ASCII $wixFile -append
+"                        <Component Id=`"MyComponent`" Guid=`"$packageCode`">"	| out-file -encoding ASCII $wixFile -append
+""																				| out-file -encoding ASCII $wixFile -append
 
 foreach ($file in $files)
 {
 	$fileId = split-path -leaf $file
 	$fileName = split-path -leaf $file
 	$fileSource = $file -replace "\\\\","\"
-"                            <File Id=`"$fileId`" Name=`"$fileName`" DiskId=`"1`" Source=`"$fileSource`"/>"	| out-file $wixFile -append
+"                            <File Id=`"$fileId`" Name=`"$fileName`" DiskId=`"1`" Source=`"$fileSource`"/>"	| out-file -encoding ASCII $wixFile -append
 }
 
-""																				| out-file $wixFile -append
-"                        </Component>"											| out-file $wixFile -append
-""																				| out-file $wixFile -append
-"                    </Directory>"												| out-file $wixFile -append
-"                </Directory>"													| out-file $wixFile -append
-"            </Directory>"														| out-file $wixFile -append
-"        </Directory>"															| out-file $wixFile -append
-""																				| out-file $wixFile -append
-"        <Feature Id=`"MyFeature`" Level=`"1`">"								| out-file $wixFile -append
-"            <ComponentRef Id=`"MyComponent`"/>"								| out-file $wixFile -append
-"        </Feature>"															| out-file $wixFile -append
-""																				| out-file $wixFile -append
-"    </Product>"																| out-file $wixFile -append
-"</Wix>"																		| out-file $wixFile -append
+""																				| out-file -encoding ASCII $wixFile -append
+"                        </Component>"											| out-file -encoding ASCII $wixFile -append
+""																				| out-file -encoding ASCII $wixFile -append
+"                    </Directory>"												| out-file -encoding ASCII $wixFile -append
+"                </Directory>"													| out-file -encoding ASCII $wixFile -append
+"            </Directory>"														| out-file -encoding ASCII $wixFile -append
+"        </Directory>"															| out-file -encoding ASCII $wixFile -append
+""																				| out-file -encoding ASCII $wixFile -append
+"        <Feature Id=`"MyFeature`" Level=`"1`">"								| out-file -encoding ASCII $wixFile -append
+"            <ComponentRef Id=`"MyComponent`"/>"								| out-file -encoding ASCII $wixFile -append
+"        </Feature>"															| out-file -encoding ASCII $wixFile -append
+""																				| out-file -encoding ASCII $wixFile -append
+"    </Product>"																| out-file -encoding ASCII $wixFile -append
+"</Wix>"																		| out-file -encoding ASCII $wixFile -append
 
