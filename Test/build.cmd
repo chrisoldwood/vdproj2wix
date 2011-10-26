@@ -12,8 +12,10 @@ if errorlevel 1 exit /b 1
 exit /b 0
 
 :clean
-del *.wixobj
-del *.wixpdb
-del *.msi
+rd /s /q Debug 2> nul
+rd /s /q Release 2> nul
+del *.wixobj 2> nul
+del *.wixpdb 2> nul
+del *.msi 2> nul
 
 exit /b 0
