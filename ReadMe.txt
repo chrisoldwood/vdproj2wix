@@ -1,17 +1,17 @@
-vdproj2wix v0.1 [Alpha]
-=======================
+vdproj2wix v0.9
+===============
 
 
 1: Installation
 ---------------
 
-Copy the vdproj2wix.ps1 to a suitable location.
+Copy the file vdproj2wix.ps1 to a suitable location.
 
 
 2: Help/Manual
 --------------
 
-There is a HelpFile - vdproj2wix.mht.
+There is a HelpFile - vdproj2wix.html.
 
 
 3: Contact Details
@@ -23,4 +23,4 @@ Web:   http://www.cix.co.uk/~gort
 
 Chris Oldwood 
 
-24th June 2011
+25th October 2011

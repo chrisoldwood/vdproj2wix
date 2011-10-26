@@ -1,1 +1,3 @@
-- Process folders correctly
+- Handle registry keys
+
+- Switch for one file per component?

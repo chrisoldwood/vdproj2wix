@@ -14,17 +14,17 @@ td		{ font-family: Verdana, Arial; font-size: 10pt; border: 1px solid black; ver
 
 <body>
 
-<h3 align="center">vdproj2wix v0.1 [Alpha]</h3>
+<h3 align="center">vdproj2wix v0.9</h3>
 
 <a name="Introduction"></a>
 <h4>Introduction</h4>
 
 <p>
-This PowerShell file (vdproj2wix.ps1) is a very simple script for converting
+This PowerShell script (vdproj2wix.ps1) is a very simple one for converting
 a Visual Studio setup project (aka a .vdproj file) into a WiX format one (i.e.
-a .wix file). Although there are other more fully featured tools for creating a
-.wix file, such as from an existing MSI, I wanted something that gave me a bare
-bones .wix file that ignored all the boilerplate code that Visual Studio adds by
+a .wxs file). Although there are other more fully featured tools for creating a
+.wxs file, such as from an existing MSI binary, I wanted something that gave me a bare
+bones .wxs file that ignored all the boilerplate code that Visual Studio adds by
 default. As a server-side chappy all the MSI installers I create are simple ones
 designed to deploy a bunch of files into a folder - this script targets that
 scenario.
@@ -35,35 +35,71 @@ scenario.
 
 <p>
 The script requires just a single argument to run - the path to the .vdproj file
-that you want to convert. It will create a new file in the same folder with a
-simialr name but a .wix extension, e.g.
-</p>
-<pre>
+that you want to convert. It will create a new file in the same folder with the
+same name but with a .wxs extension instead, e.g.
+</p><pre>
 C:\> PowerShell -File vdproj2wix.ps1 Path\To\MyProject.vdproj
 Input : Path\To\MyProject.vdproj
-Output: Path\To\MyProject.wix
-</pre>
+Output: Path\To\MyProject.wxs
+</pre><p>
+This should produce a simple .wxs file that looks something like the following:-
+</p><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"&gt;
+    &lt;Product Id="ABCDEFGH-ABCD-ABCD-ABCD-ABCDEFGHIJKL"
+             Name="vdproj2wix Test"
+             Language="1033"
+             Version="1.0.0"
+             Manufacturer="Chris Oldwood"
+             UpgradeCode="ABCDEFGH-ABCD-ABCD-ABCD-ABCDEFGHIJKL"&gt;
+
+        &lt;Package Compressed="yes"/&gt;
+
+        &lt;Media Id="1" Cabinet="product.cab" EmbedCab="yes"/&gt;
+
+        &lt;Directory Name="SourceDir" Id="TARGETDIR"&gt;
+            &lt;Directory Name="ProgramFilesFolder" Id="ProgramFilesFolder"&gt;
+                &lt;Directory Name="Chris Oldwood" Id="_1"&gt;
+                    &lt;Directory Name="vdproj2wix Test" Id="_2"&gt;
+                        &lt;Component Id="_1" Guid="F27BD5C5-A65D-4608-96D4-7C5DA1F76302"&gt;
+                            &lt;File Source="Example File.txt"/&gt;
+                            &lt;File Source="SubFolder\Another File.html" Name="Manual.html"/&gt;
+                        &lt;/Component&gt;
+                    &lt;/Directory&gt;
+                &lt;/Directory&gt;
+            &lt;/Directory&gt;
+        &lt;/Directory&gt;
+
+        &lt;Feature Id="_1" Level="1"&gt;
+            &lt;ComponentRef Id="_1"/&gt;
+        &lt;/Feature&gt;
+
+    &lt;/Product&gt;
+&lt;/Wix&gt;
+</pre><p><i>
+NB: The WiX manual strongly advises you to put each file into a separate
+component to make servicing easier. While that may be the best approach for
+long-term maintenance I wanted the simplest .wxs file possible from the
+conversion. This is highlighted by the generation of "_N" style Id's where
+necessary.
+</i></p>
 
 <a name="Limitations"></a>
 <h4>Limitations</h4>
 
 <p>
-As should be clear from the paragraph above this script is not intended to provide
-a hi-fidelity conversion, on the contrary it produces a basic .wix file with
-entries for the following:-
+As should be clear from the Introduction and example above this script is not
+intended to provide a hi-fidelity conversion, on the contrary it produces a
+basic .wxs file with entries for the following:-
 </p>
 <ul>
-<li>The Product section (name, GUIDs, version, manufacturer)</li>
-<li>The default 'Program Files' folder (based on manufacturer\product)</li>
-<li>The files (all in one component)</li>
+<li>The product section (name, GUIDs, version, manufacturer)</li>
+<li>The directory structure (TARGETDIR, ProgramFilesFolder, etc.)</li>
+<li>The files structured as one 'component' per directory of files</li>
+<li>A single feature that references all components</li>
 </ul>
 <p>
-Hence, this means no UI stuff, or any other fancy features.
-</p>
-<p>
-<i><b>NB: Although this alpha version doesn't support multiple folders and might
-generate a badly formed file in some cases my intention is to fix these issues
-so that it handles the simple "file deployment" style .vdproj files properly.</b></i>
+Hence this means no UI stuff or any other fancy MSI features.
 </p>
 
 <hr>
@@ -85,7 +121,7 @@ Email: <a href="mailto://gort@cix.co.uk">gort@cix.co.uk</a><br>
 Web: <a href="http://www.cix.co.uk/~gort">www.cix.co.uk/~gort</a><br>
 </p><p>
 Chris Oldwood<br>
-24th June 2011<br>
+25th October 2011<br>
 </p>
 
 </body>

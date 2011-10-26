@@ -1,5 +1,11 @@
-Version 0.1 [Alpha]
-===================
+Version 0.9
+===========
+
+- Added proper support for converting the file-system layout.
+- Corrected the output file extensions to .wxs.
+
+Version 0.1
+===========
 
 - First public release.
 
@@ -7,4 +13,4 @@ Version 0.1 [Alpha]
 Chris Oldwood 
 [gort@cix.co.uk]
 
-24th June 2011
+25th October 2011
