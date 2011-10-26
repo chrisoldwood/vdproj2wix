@@ -15,7 +15,31 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_01B0311199984550BAB913B6311E1603"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_A6BFA90FE8CC4AB2B623361E17A5B2F2"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_AA6021A994A14F398FBD858707640006"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E18CFD8448CC4AD5AC23EB590BCD03D2"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E65626FF4FC94D2EA65A727749E5BF98"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -77,12 +101,92 @@
         }
         "File"
         {
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_01B0311199984550BAB913B6311E1603"
+            {
+            "SourcePath" = "8:SubFolder\\File With Spaces.txt"
+            "TargetName" = "8:File With Spaces.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_B108E1819346419DB671B4E472C92D3E"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{A582A373-4685-4296-BEFE-614B80A702C3}:_A6BFA90FE8CC4AB2B623361E17A5B2F2"
             {
             "SourcePath" = "8:FileInMainFolder.txt"
             "TargetName" = "8:FileInMainFolder.txt"
             "Tag" = "8:"
             "Folder" = "8:_96A3D1EB1439486F8CE58D247ED44441"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_AA6021A994A14F398FBD858707640006"
+            {
+            "SourcePath" = "8:SubFolder\\1-Number-Prefix.txt"
+            "TargetName" = "8:1-Number-Prefix.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_B108E1819346419DB671B4E472C92D3E"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_E18CFD8448CC4AD5AC23EB590BCD03D2"
+            {
+            "SourcePath" = "8:SubFolder\\File With Diff TargetName.txt"
+            "TargetName" = "8:Different Target Name.doc"
+            "Tag" = "8:"
+            "Folder" = "8:_B108E1819346419DB671B4E472C92D3E"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_E65626FF4FC94D2EA65A727749E5BF98"
+            {
+            "SourcePath" = "8:SubFolder\\FileInSubFolder.txt"
+            "TargetName" = "8:FileInSubFolder.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_B108E1819346419DB671B4E472C92D3E"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -124,6 +228,50 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
+                    "{F27BD5C5-A65D-4608-96D4-7C5DA1F76302}:_557B219E25E54D76BC86BD98F7AB2C5F"
+                    {
+                    "Name" = "8:EmptySubFolder"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_2544CF5AF5C1478A8B2FFC31435DC038"
+                        "Folders"
+                        {
+                            "{F27BD5C5-A65D-4608-96D4-7C5DA1F76302}:_F0582F294C2541C0B74BC188278E5879"
+                            {
+                            "Name" = "8:EmptyNestedFolder"
+                            "AlwaysCreate" = "11:FALSE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_75C04C7F82B14F6EB89A658D2F90AC3F"
+                                "Folders"
+                                {
+                                }
+                            }
+                        }
+                    }
+                    "{F27BD5C5-A65D-4608-96D4-7C5DA1F76302}:_B108E1819346419DB671B4E472C92D3E"
+                    {
+                    "Name" = "8:FolderWithFiles"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_560E4FDBFD88463EA68399033648009D"
+                        "Folders"
+                        {
+                            "{F27BD5C5-A65D-4608-96D4-7C5DA1F76302}:_0824995D4EA347608B24AA19B2A8FC91"
+                            {
+                            "Name" = "8:EmptyNestedFolder"
+                            "AlwaysCreate" = "11:FALSE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_3BC5C730F90A4041B4C5767B440396DA"
+                                "Folders"
+                                {
+                                }
+                            }
+                        }
+                    }
                 }
             }
             "{78BAF5CE-F2E5-45BE-83BC-DB6AF387E941}:_A1D73094422941BBA91974CF17BB448E"
