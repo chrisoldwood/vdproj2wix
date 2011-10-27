@@ -158,16 +158,20 @@ foreach ($line in $lines)
 	{
 		if ($line -match '^\s{12}"SourcePath" = "8:(?<value>.*)"$')
 		{
-			$currentFile = @{ SourcePath=$matches.value; TargetName=$matches.value; Folder='' }
+			$currentFile = @{ SourcePath=$matches.value; TargetName=''; Folder='' }
 			$files	  += $currentFile
 		}
-		elseif ($line -match '^\s{12}"TargetName" = "8:(?<value>.*)"$')
+		elseif ( ($line -match '^\s{12}"TargetName" = "8:(?<value>.*)"$') -and ($matches.value -ne '') )
 		{
-			$currentFile.TargetName = $matches.value
+            $currentFile.TargetName = $matches.value
 		}
 		elseif ($line -match '^\s{12}"Folder" = "8:(?<value>.*)"$')
 		{
 			$currentFile.Folder = $matches.value
+		}
+		elseif ( ($line -match '^\s{12}"Exclude" = "11:(?<value>.*)"$') -and ($matches.value -eq 'true') )
+		{
+			$files = $files[0..($files.length-2)]
 		}
 	}
 	# Parse folder section
@@ -326,7 +330,7 @@ function writeFileSystemTree($tree, $indent, $file)
 				$path = unescapeFilePath $file.SourcePath
 				$name = split-path -leaf $path
 
-				if ($file.TargetName -ne $name)
+				if ( ($file.TargetName -ne $name) -and ($file.TargetName -ne '') )
 				{
 					$name = $file.TargetName
 
@@ -385,3 +389,4 @@ foreach ($component in $components)
 ""																				| out-file -encoding ASCII $wixFile -append
 "    </Product>"																| out-file -encoding ASCII $wixFile -append
 "</Wix>"																		| out-file -encoding ASCII $wixFile -append
+
