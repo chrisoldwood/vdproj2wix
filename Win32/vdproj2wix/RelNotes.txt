@@ -1,3 +1,9 @@
+Version 1.0
+===========
+
+- Fixed handling of excluded files.
+- Fixed handling of detected dependencies that have no TargetName.
+
 Version 0.9
 ===========
 
@@ -13,4 +19,4 @@ Version 0.1
 Chris Oldwood 
 [gort@cix.co.uk]
 
-25th October 2011
+31st October 2011

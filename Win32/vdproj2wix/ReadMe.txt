@@ -1,11 +1,11 @@
-vdproj2wix v0.9
+vdproj2wix v1.0
 ===============
 
 
 1: Installation
 ---------------
 
-Copy the file vdproj2wix.ps1 to a suitable location.
+None required.
 
 
 2: Help/Manual
@@ -23,4 +23,4 @@ Web:   http://www.cix.co.uk/~gort
 
 Chris Oldwood 
 
-25th October 2011
+31st October 2011
