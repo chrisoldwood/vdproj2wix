@@ -3,7 +3,7 @@
 # \file		vdproj2wix.ps1
 # \brief	Converts a VS setup project (.vdproj) to a WiX source file (.wxs).
 # \author	Chris Oldwood (gort@cix.co.uk | http://www.cix.co.uk/~gort)
-# \version	0.9
+# \version	1.0
 #
 # This script does a trivial transformation of a Visual Studio setup project
 # file (.vdproj) to a WiX format file (.wxs). It was only designed to handle
@@ -28,7 +28,7 @@ if ( ($args.count -ne 1) -or ($args[0] -eq '--help') )
 {
 	if ($args[0] -eq '--help')
 	{
-		write-output "vdproj2wix v0.9"
+		write-output "vdproj2wix v1.0"
 		write-output "(C) Chris Oldwood 2011 (gort@cix.co.uk)"
 	}
 	else
