@@ -17,5 +17,6 @@ rd /s /q Release 2> nul
 del *.wixobj 2> nul
 del *.wixpdb 2> nul
 del *.msi 2> nul
+del /ah *.suo 2> nul
 
 exit /b 0
