@@ -33,6 +33,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_CBEA7C44B5024F11BB08993460838CA8"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_E18CFD8448CC4AD5AC23EB590BCD03D2"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -158,6 +164,26 @@
             "PackageAs" = "3:1"
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{A582A373-4685-4296-BEFE-614B80A702C3}:_CBEA7C44B5024F11BB08993460838CA8"
+            {
+            "SourcePath" = "8:SubFolder\\ExcludedFile.txt"
+            "TargetName" = "8:ExcludedFile.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_96A3D1EB1439486F8CE58D247ED44441"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:TRUE"
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
