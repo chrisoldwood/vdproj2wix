@@ -245,37 +245,43 @@ foreach ($line in $lines)
 $files = $files | sort -property { split-path -leaf $_.SourcePath }
 
 # Link the files to their parent folders
-foreach ($file in $files)
+if ($files -ne $null)
 {
-	$parent = $file.Folder
+	foreach ($file in $files)
+	{
+		$parent = $file.Folder
 
-	($folderMap.$parent).Files += $file
+		($folderMap.$parent).Files += $file
+	}
 }
 
 # Expand the DefaultLocation folder into a folder tree
-foreach ($folder in $folders)
+if ($folders -ne $null)
 {
-	if ($folder.DefaultLocation -ne '')
+	foreach ($folder in $folders)
 	{
-		$installFolder = unescapeFilePath $folder.DefaultLocation
-		$installFolder = $installFolder -replace '\[ProgramFilesFolder\]',"ProgramFilesFolder\"
-		$installFolder = $installFolder -replace '\[Manufacturer\]',"$manufacturer"
-		$installFolder = $installFolder -replace '\[ProductName\]',"$productName"
-		
-		$childFolders  = $installFolder.Split('\\')
-		
-		foreach ($child in $childFolders)
+		if ($folder.DefaultLocation -ne '')
 		{
-			# Insert new child folder between the current one and its children
-			$newFolder = @{ Id=$child; Name=$child; Property=''; DefaultLocation='';
-							Guid=$folder.Guid; Folders=$folder.Folders; Files=$folder.Files }
+			$installFolder = unescapeFilePath $folder.DefaultLocation
+			$installFolder = $installFolder -replace '\[ProgramFilesFolder\]',"ProgramFilesFolder\"
+			$installFolder = $installFolder -replace '\[Manufacturer\]',"$manufacturer"
+			$installFolder = $installFolder -replace '\[ProductName\]',"$productName"
 			
-			$folder.Guid     = ''
-			$folder.Folders  = @()
-			$folder.Files    = @()
-			$folder.Folders += $newFolder
+			$childFolders  = $installFolder.Split('\\')
 			
-			$folder = $newFolder
+			foreach ($child in $childFolders)
+			{
+				# Insert new child folder between the current one and its children
+				$newFolder = @{ Id=$child; Name=$child; Property=''; DefaultLocation='';
+								Guid=$folder.Guid; Folders=$folder.Folders; Files=$folder.Files }
+				
+				$folder.Guid     = ''
+				$folder.Folders  = @()
+				$folder.Files    = @()
+				$folder.Folders += $newFolder
+				
+				$folder = $newFolder
+			}
 		}
 	}
 }
