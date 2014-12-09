@@ -13,6 +13,15 @@ Studio adds by default. As a server-side chappy all the MSI installers I create
 are simple ones designed to deploy a bunch of files into a folder - this script
 targets that scenario.
 
+Releases
+--------
+
+Stable releases are formally packaged and made available from my Win 32 tools page:
+http://www.chrisoldwood.com/win32.htm
+
+The latest code is available from my GitHub repo:
+https://github.com/chrisoldwood/vdproj2wix
+
 Documentation
 -------------
 
