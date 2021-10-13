@@ -1,5 +1,5 @@
 Microsoft Visual Studio Solution File, Format Version 8.00
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Test", "Test.vdproj", "{C3234875-729D-406F-8B86-7204D6567768}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "1-FileSystem-Test", "1-FileSystem\Test.vdproj", "{C3234875-729D-406F-8B86-7204D6567768}"
 	ProjectSection(ProjectDependencies) = postProject
 	EndProjectSection
 EndProject
