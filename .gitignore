@@ -1,0 +1,7 @@
+# Test output
+Test-FileSystem.wxs
+
+# WiX output
+*.msi
+*.wixobj
+*.wixpdb
