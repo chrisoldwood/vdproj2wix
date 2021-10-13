@@ -3,7 +3,7 @@
 # \file		vdproj2wix.ps1
 # \brief	Converts a VS setup project (.vdproj) to a WiX source file (.wxs).
 # \author	Chris Oldwood (gort@cix.co.uk | http://www.cix.co.uk/~gort)
-# \version	1.0
+# \version	1.0.1
 #
 # This script does a trivial transformation of a Visual Studio setup project
 # file (.vdproj) to a WiX format file (.wxs). It was only designed to handle
@@ -75,7 +75,6 @@ $languageId = '1033'
 $productVersion = '<unknown>'
 $manufacturer = '<unknown>'
 $upgradeCode = '<unknown>'
-$packageCode = '<unknown>'
 $files = @()
 $folders = @()
 
@@ -147,10 +146,6 @@ foreach ($line in $lines)
 		elseif ($line -match '^\s{8}"UpgradeCode" = "8:{(?<value>.*)}"$')
 		{
 			$upgradeCode = $matches.value
-		}
-		elseif ($line -match '^\s{8}"PackageCode" = "8:{(?<value>.*)}"$')
-		{
-			$packageCode = $matches.value
 		}
 	}
 	# Parse files section
@@ -242,10 +237,10 @@ foreach ($line in $lines)
 }
 
 # Sort the files by filename to make checking easier
-$files = $files | sort -property { split-path -leaf $_.SourcePath }
+$files = $files | sort-object -property { split-path -leaf $_.SourcePath }
 
 # Link the files to their parent folders
-if ($files -ne $null)
+if ($files)
 {
 	foreach ($file in $files)
 	{
@@ -256,7 +251,7 @@ if ($files -ne $null)
 }
 
 # Expand the DefaultLocation folder into a folder tree
-if ($folders -ne $null)
+if ($folders)
 {
 	foreach ($folder in $folders)
 	{
