@@ -1,5 +1,6 @@
 # Test output
-Test-FileSystem.wxs
+*.wxs
+!Expected.wxs
 
 # WiX output
 *.msi

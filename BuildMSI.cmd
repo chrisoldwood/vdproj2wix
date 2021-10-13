@@ -16,16 +16,21 @@ if !errorlevel! neq 0 (
     exit /b 1
 )
 
-set source=%~1
-set candleOutput=%~dpn1.wixobj
+set root=%~dp1
+set source=%~nx1
+set candleOutput=%~n1.wixobj
 
 :build
+pushd "%root%"
+if !errorlevel! neq 0 exit /b !errorlevel!
+
 candle %source%
 if !errorlevel! neq 0 exit /b !errorlevel!
 
 light %candleOutput%
 if !errorlevel! neq 0 exit /b !errorlevel!
 
+popd
 exit /b 0
 
 :usage
