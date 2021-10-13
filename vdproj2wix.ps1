@@ -3,7 +3,7 @@
 # \file		vdproj2wix.ps1
 # \brief	Converts a VS setup project (.vdproj) to a WiX source file (.wxs).
 # \author	Chris Oldwood (gort@cix.co.uk | http://www.cix.co.uk/~gort)
-# \version	1.0.1
+# \version	1.0.2
 #
 # This script does a trivial transformation of a Visual Studio setup project
 # file (.vdproj) to a WiX format file (.wxs). It was only designed to handle
@@ -286,7 +286,7 @@ if ($folders)
 ################################################################################
 
 # Write the tree of folders and files
-function writeFileSystemTree($tree, $indent, $file)
+function writeFileSystemTree($tree, $indent, $wixFile)
 {
 	foreach ($folder in $tree)
 	{
@@ -305,13 +305,13 @@ function writeFileSystemTree($tree, $indent, $file)
 			$folderId = "_{0}" -f $script:nextFolderId++
 		}
 		
-		"{0}<Directory Name=`"{1}`" Id=`"{2}`">" -f $indent,$folder.Name,$folderId | out-file -encoding ASCII $file -append
+		"{0}<Directory Name=`"{1}`" Id=`"{2}`">" -f $indent,$folder.Name,$folderId | out-file -encoding ASCII $wixFile -append
 
 		if ($folder.Folders.length -ne 0)
 		{
 			$indent += '    '
 
-			writeFileSystemTree $folder.Folders $indent $file
+			writeFileSystemTree $folder.Folders $indent $wixFile
 
 			$indent = $indent.substring(0, $indent.length-4)
 		}
