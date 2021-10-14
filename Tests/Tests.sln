@@ -1,26 +1,27 @@
-Microsoft Visual Studio Solution File, Format Version 8.00
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "1-FileSystem-Test", "1-FileSystem\Test.vdproj", "{C3234875-729D-406F-8B86-7204D6567768}"
-	ProjectSection(ProjectDependencies) = postProject
-	EndProjectSection
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Test", "1-FileSystem\Test.vdproj", "{C3234875-729D-406F-8B86-7204D6567768}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-FileSystem", "1-FileSystem", "{21036CF6-3E7D-4308-B07C-D5717E3E9490}"
 EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C3234875-729D-406F-8B86-7204D6567768}.Debug|Default.ActiveCfg = Debug
+		{C3234875-729D-406F-8B86-7204D6567768}.Debug|Default.Build.0 = Debug
+		{C3234875-729D-406F-8B86-7204D6567768}.Release|Default.ActiveCfg = Release
+		{C3234875-729D-406F-8B86-7204D6567768}.Release|Default.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C3234875-729D-406F-8B86-7204D6567768} = {21036CF6-3E7D-4308-B07C-D5717E3E9490}
+	EndGlobalSection
 	GlobalSection(DPCodeReviewSolutionGUID) = preSolution
 		DPCodeReviewSolutionGUID = {00000000-0000-0000-0000-000000000000}
-	EndGlobalSection
-	GlobalSection(SolutionConfiguration) = preSolution
-		Debug = Debug
-		Release = Release
-	EndGlobalSection
-	GlobalSection(ProjectDependencies) = postSolution
-	EndGlobalSection
-	GlobalSection(ProjectConfiguration) = postSolution
-		{C3234875-729D-406F-8B86-7204D6567768}.Debug.ActiveCfg = Debug
-		{C3234875-729D-406F-8B86-7204D6567768}.Debug.Build.0 = Debug
-		{C3234875-729D-406F-8B86-7204D6567768}.Release.ActiveCfg = Release
-		{C3234875-729D-406F-8B86-7204D6567768}.Release.Build.0 = Release
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-	EndGlobalSection
-	GlobalSection(ExtensibilityAddIns) = postSolution
 	EndGlobalSection
 EndGlobal

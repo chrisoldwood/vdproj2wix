@@ -22,14 +22,14 @@
                         <Directory Name="FolderWithFiles" Id="_5">
                             <Directory Name="EmptyNestedFolder" Id="_6">
                             </Directory>
-                            <Component Id="_1" Guid="F27BD5C5-A65D-4608-96D4-7C5DA1F76302">
+                            <Component Id="_1" Guid="9EF0B969-E518-4E46-987F-47570745A589">
                                 <File Source="SubFolder\1-Number-Prefix.txt"/>
                                 <File Source="SubFolder\File With Diff TargetName.txt" Name="Different Target Name.doc"/>
                                 <File Source="SubFolder\File With Spaces.txt"/>
                                 <File Source="SubFolder\FileInSubFolder.txt"/>
                             </Component>
                         </Directory>
-                        <Component Id="_2" Guid="58C0ADA3-3CEA-43BD-A3B3-2EA121BC8217">
+                        <Component Id="_2" Guid="3C67513D-01DD-4637-8A68-80971EB9504F">
                             <File Source="FileInMainFolder.txt"/>
                         </Component>
                     </Directory>

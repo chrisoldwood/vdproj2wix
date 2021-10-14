@@ -6,3 +6,6 @@
 *.msi
 *.wixobj
 *.wixpdb
+
+# IDE files
+*.suo
