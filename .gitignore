@@ -9,3 +9,5 @@
 
 # IDE files
 *.suo
+Debug
+Release

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Product Id="A264FDC9-3A90-4A77-ABBB-AC32A169DA91"
+             Name="Test"
+             Language="1033"
+             Version="1.0.0"
+             Manufacturer="Default Company Name"
+             UpgradeCode="DAA23B0A-895B-42D3-B85E-77046166D065">
+
+        <Package Compressed="yes"/>
+
+        <Media Id="1" Cabinet="product.cab" EmbedCab="yes"/>
+
+        <Directory Name="SourceDir" Id="TARGETDIR">
+            <Directory Name="ProgramFilesFolder" Id="ProgramFilesFolder">
+                <Directory Name="Default Company Name" Id="_1">
+                    <Directory Name="Test" Id="_2">
+                    </Directory>
+                </Directory>
+            </Directory>
+        </Directory>
+
+        <Feature Id="_1" Level="1">
+        </Feature>
+
+    </Product>
+</Wix>

@@ -4,6 +4,10 @@ Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Test", "1-FileSystem\Test.v
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-FileSystem", "1-FileSystem", "{21036CF6-3E7D-4308-B07C-D5717E3E9490}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0-DefaultProject", "0-DefaultProject", "{56AA4D13-4455-41CF-9A74-7725FA45555F}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Test", "0-DefaultProject\Test.vdproj", "{D1D8A7E8-02FF-43C8-A1B2-DAAC50DB3412}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Default = Debug|Default
@@ -14,12 +18,17 @@ Global
 		{C3234875-729D-406F-8B86-7204D6567768}.Debug|Default.Build.0 = Debug
 		{C3234875-729D-406F-8B86-7204D6567768}.Release|Default.ActiveCfg = Release
 		{C3234875-729D-406F-8B86-7204D6567768}.Release|Default.Build.0 = Release
+		{D1D8A7E8-02FF-43C8-A1B2-DAAC50DB3412}.Debug|Default.ActiveCfg = Debug
+		{D1D8A7E8-02FF-43C8-A1B2-DAAC50DB3412}.Debug|Default.Build.0 = Debug
+		{D1D8A7E8-02FF-43C8-A1B2-DAAC50DB3412}.Release|Default.ActiveCfg = Release
+		{D1D8A7E8-02FF-43C8-A1B2-DAAC50DB3412}.Release|Default.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C3234875-729D-406F-8B86-7204D6567768} = {21036CF6-3E7D-4308-B07C-D5717E3E9490}
+		{D1D8A7E8-02FF-43C8-A1B2-DAAC50DB3412} = {56AA4D13-4455-41CF-9A74-7725FA45555F}
 	EndGlobalSection
 	GlobalSection(DPCodeReviewSolutionGUID) = preSolution
 		DPCodeReviewSolutionGUID = {00000000-0000-0000-0000-000000000000}
